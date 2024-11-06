@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class plantItems : MonoBehaviour
 {
-    BoxCollider col;
+    private BoxCollider col;
+    [SerializeField] private GameObject Tree;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,11 @@ public class plantItems : MonoBehaviour
         if(other.tag == "Green")
         {
             Debug.Log("Green item detected");
+            Vector3 pos = transform.position;
+            Instantiate(Tree, pos, Quaternion.identity);
             other.GetComponent<Collider>().enabled = false;
             Destroy(other.gameObject, 1f);
+
         }
     }
 }

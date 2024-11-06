@@ -35,6 +35,7 @@ public class treeGrowth : MonoBehaviour
         while (timer < growTime);
 
         isMaxSize = true;
+        
     }
 
     private void replaceTree()
