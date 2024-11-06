@@ -9,9 +9,13 @@ public class treeGrowth : MonoBehaviour
     public float maxSize = 2f;
 
     public bool isMaxSize = false;
+    [SerializeField] private MeshFilter modelToChange;
+    [SerializeField] private Mesh[] TreeModelsToUse;
 
     void Start()
     {
+        replaceTree();
+
         if(isMaxSize == false)
         {
             StartCoroutine(Grow());
@@ -22,7 +26,7 @@ public class treeGrowth : MonoBehaviour
     {
         Vector3 startScale = transform.localScale;
         Vector3 maxScale = new Vector3(maxSize, maxSize, maxSize);
-
+        
         do{
             transform.localScale = Vector3.Lerp(startScale, maxScale, timer / growTime);
             timer += Time.deltaTime;
@@ -31,5 +35,12 @@ public class treeGrowth : MonoBehaviour
         while (timer < growTime);
 
         isMaxSize = true;
+    }
+
+    private void replaceTree()
+    {
+        int index = UnityEngine.Random.Range(0, TreeModelsToUse.Length);
+
+        modelToChange.mesh = TreeModelsToUse[index];
     }
 }
