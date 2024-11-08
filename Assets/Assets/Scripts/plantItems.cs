@@ -24,9 +24,9 @@ public class plantItems : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Seed Status: "+ hasSeed);
-        Debug.Log("Water Status: "+ hasWater);
-        Debug.Log("Powder Status: "+ hasPowder);
+        // Debug.Log("Seed Status: "+ hasSeed);
+        // Debug.Log("Water Status: "+ hasWater);
+        // Debug.Log("Powder Status: "+ hasPowder);
 
         if(hasSeed && hasWater && hasPowder && !plantGrown)
         {
@@ -44,36 +44,36 @@ public class plantItems : MonoBehaviour
     {
         if(other.tag == "Green" && !hasSeed)
         {
-            Debug.Log("Green item detected");
+            // Debug.Log("Green item detected");
             hasSeed = true;
 
             other.GetComponent<Collider>().enabled = false;
 
             Destroy(other.gameObject, 1f);
         }
-        else{Debug.Log("Wrong object or already has item");};
+        // else{Debug.Log("Wrong object or already has item");};
 
         if(other.tag == "Water" && !hasWater)
         {
-            Debug.Log("Water item detected");
+            // Debug.Log("Water item detected");
             hasWater = true;
 
             other.GetComponent<Collider>().enabled = false;
 
             Destroy(other.gameObject, 1f);
         }
-        else{Debug.Log("Wrong object or already has item");};
+        // else{Debug.Log("Wrong object or already has item");};
 
         if(other.tag == "Powder" && !hasPowder) 
         {
-            Debug.Log("Powder item detected");
+            // Debug.Log("Powder item detected");
             hasPowder = true;
 
             other.GetComponent<Collider>().enabled = false;
 
             Destroy(other.gameObject, 1f);
         }
-        else{Debug.Log("Wrong object or already has item");};
+        // else{Debug.Log("Wrong object or already has item");};
 
     }
 }

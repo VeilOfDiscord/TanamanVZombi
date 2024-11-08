@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class zombieWalk : MonoBehaviour
 {
-    [SerializeField] private Transform target;
-    public float speed = 4f;
+    [SerializeField] private GameObject[] targetArr;
+    private Transform target;
+    public float speed = 1f;
     private Rigidbody rig;
     
     void Start()
     {
         rig = GetComponent<Rigidbody>();
+        targetArr = GameObject.FindGameObjectsWithTag("MainCamera");
+        target = targetArr[0].transform;
     }
 
     void FixedUpdate()
