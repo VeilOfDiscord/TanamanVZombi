@@ -9,6 +9,7 @@ public class zombieWalk : MonoBehaviour
     private Transform target;
     public float speed = 1f;
     private Rigidbody rig;
+    private int health = 2;
     
     void Start()
     {
@@ -22,5 +23,11 @@ public class zombieWalk : MonoBehaviour
         Vector3 pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
         rig.MovePosition(pos);
         transform.LookAt(target);
+    }
+
+    void Update()   
+    {
+        //If collider isTrigger is hit with bullet tag then health --; 
+        // if health == 0 then destroy zombie
     }
 }
