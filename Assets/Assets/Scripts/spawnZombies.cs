@@ -8,6 +8,7 @@ public class spawnZombies : MonoBehaviour
     [SerializeField] private int numEnemies = 2;
     [SerializeField] private GameObject[] enemies;
     [SerializeField] public GameObject Menu;
+    private int numTrees; 
     public int score = 0;
     private bool gameStarted = false;
     void Start()
@@ -22,7 +23,15 @@ public class spawnZombies : MonoBehaviour
         {
             Debug.Log("Game has started");
             Debug.Log("Score: " + score);
+
+            if(score == numTrees)
+            {
+                gameStarted = false;
+                Menu.SetActive(true);
+                Debug.Log("Game Over!");
+            }
         }
+
     }
 
     private void spawnZomb()
