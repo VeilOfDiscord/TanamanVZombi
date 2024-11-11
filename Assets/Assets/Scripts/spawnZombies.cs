@@ -8,6 +8,7 @@ public class spawnZombies : MonoBehaviour
     [SerializeField] private int numEnemies = 2;
     [SerializeField] private GameObject[] enemies;
     [SerializeField] public GameObject Menu;
+    [SerializeField] private GameObject EndScreen;
     [SerializeField] private int numTrees; 
     public int score = 0;
     private bool gameStarted = false;
@@ -26,9 +27,8 @@ public class spawnZombies : MonoBehaviour
 
             if(score == numTrees)
             {
-                gameStarted = false;
-                Menu.SetActive(true);
-                Debug.Log("Game Over!");
+
+
             }
         }
     }
@@ -46,9 +46,18 @@ public class spawnZombies : MonoBehaviour
 
     public void startGame()
     {
+        Debug.Log("starting game");
         gameStarted = true;
         Menu.SetActive(false);
         spawnZomb();
     }
 
+    public void endGame()
+    {
+        gameStarted = false;
+        Menu.SetActive(true);
+        Debug.Log("Game Over!");
+        EndScreen.SetActive(true);
+
+    }
 }
