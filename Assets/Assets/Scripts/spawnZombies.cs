@@ -7,20 +7,40 @@ public class spawnZombies : MonoBehaviour
 {
     [SerializeField] private int numEnemies = 2;
     [SerializeField] private GameObject[] enemies;
+    [SerializeField] public GameObject Menu;
+    public int score = 0;
+    private bool gameStarted = true;
     void Start()
     {
-        for(int i = 0; i < numEnemies; i++)
+        Debug.Log("Load in game");
+        // startGame();
+    }
+
+    void Update()
+    {
+        if(gameStarted == true)
         {
-            spawnZomb();
+            Debug.Log("Game has started");
+            Debug.Log("Score: " + score);
         }
     }
 
     private void spawnZomb()
     {
-        // Vector3 randomSpawn = new Vector3(Random.Range(-plane_x, plane_x), 3, Random.Range(-plane_z, plane_z));
-        Vector3 randomSpawn = new Vector3(Random.Range(-25,25), 3, Random.Range(-25,25));
-        int randomZombie = Random.Range(0, enemies.Length);
-        GameObject zomb = Instantiate(enemies[randomZombie], randomSpawn, Quaternion.identity);
+        for(int i = 0; i < numEnemies; i++)
+        {
+            // Vector3 randomSpawn = new Vector3(Random.Range(-plane_x, plane_x), 3, Random.Range(-plane_z, plane_z));
+            Vector3 randomSpawn = new Vector3(Random.Range(-25,25), 3, Random.Range(-25,25));
+            int randomZombie = Random.Range(0, enemies.Length);
+            GameObject zomb = Instantiate(enemies[randomZombie], randomSpawn, Quaternion.identity);
+        }
+    }
+
+    public void startGame()
+    {
+        gameStarted = true;
+        Menu.SetActive(false);
+        spawnZomb();
     }
 
 }

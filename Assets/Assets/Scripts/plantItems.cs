@@ -8,7 +8,8 @@ public class plantItems : MonoBehaviour
     [SerializeField] private Vector3 pos;
 
     [SerializeField] private GameObject Tree;
-
+    [SerializeField] private GameObject managerObj;
+    private spawnZombies manager;
     private bool hasSeed = false;
     private bool hasWater = false;
     private bool hasPowder = false;
@@ -18,8 +19,8 @@ public class plantItems : MonoBehaviour
     void Awake()
     {
         col = GetComponent<BoxCollider>();
-        Vector3 pos = gameObject.transform.position;
-
+        pos = gameObject.transform.position;
+        manager = managerObj.GetComponent<spawnZombies>();
     }
 
     void Update()
@@ -31,6 +32,7 @@ public class plantItems : MonoBehaviour
         if(hasSeed && hasWater && hasPowder && !plantGrown)
         {
             growPlant();
+            manager.score += 1;
             plantGrown = true;
         }
     }
