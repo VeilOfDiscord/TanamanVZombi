@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   growTime: 3
-  maxSize: 50
+  maxSize: 70
   isMaxSize: 0
   modelToChange: {fileID: 1321450436418681175}
   TreeModelsToUse:

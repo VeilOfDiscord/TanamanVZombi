@@ -9,6 +9,7 @@ public class zombieWalk : MonoBehaviour
     private Transform target;
     public float speed = 1f;
     private Rigidbody rig;
+    // private Collider triggerCol;
     private int health = 2;
     
     void Start()
@@ -25,9 +26,16 @@ public class zombieWalk : MonoBehaviour
         transform.LookAt(target);
     }
 
-    void Update()   
+    void OnTriggerEnter(Collider other)
     {
-        //If collider isTrigger is hit with bullet tag then health --; 
-        // if health == 0 then destroy zombie
+        if (other.gameObject.tag == "Bullet")
+        {
+            Destroy(other.gameObject);  // destroy bullet after hit
+            health--;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
