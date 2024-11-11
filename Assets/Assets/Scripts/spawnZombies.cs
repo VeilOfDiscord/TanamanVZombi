@@ -9,7 +9,7 @@ public class spawnZombies : MonoBehaviour
     [SerializeField] private GameObject[] enemies;
     [SerializeField] public GameObject Menu;
     public int score = 0;
-    private bool gameStarted = true;
+    private bool gameStarted = false;
     void Start()
     {
         Debug.Log("Load in game");
