@@ -42,6 +42,6 @@ public class treeGrowth : MonoBehaviour
     {
         int index = UnityEngine.Random.Range(0, TreeModelsToUse.Length);
 
-        modelToChange.mesh = TreeModelsToUse[index];
+        modelToChange.mesh = TreeModelsToUse[0];
     }
 }

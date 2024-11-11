@@ -5,7 +5,7 @@ using UnityEngine;
 public class plantItems : MonoBehaviour
 {
     private BoxCollider col;
-    private Vector3 pos;
+    [SerializeField] private Vector3 pos;
 
     [SerializeField] private GameObject Tree;
 
@@ -15,10 +15,10 @@ public class plantItems : MonoBehaviour
     private bool plantGrown = false;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         col = GetComponent<BoxCollider>();
-        Vector3 pos = transform.position;
+        Vector3 pos = gameObject.transform.position;
 
     }
 
@@ -38,6 +38,7 @@ public class plantItems : MonoBehaviour
     private void growPlant()
     {
         Instantiate(Tree, pos, Quaternion.identity);
+        // Debug.Log("Planting tree at:" + pos);
     }
 
     private void OnTriggerEnter(Collider other)
