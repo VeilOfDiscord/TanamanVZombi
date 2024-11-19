@@ -18662,13 +18662,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5031084466095668852}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9818782, z: 0.18951291, w: 0}
-  m_LocalPosition: {x: 0.493, y: -4.895, z: -6.867}
+  m_LocalRotation: {x: -0, y: 0.7796605, z: 0.6262024, w: 0}
+  m_LocalPosition: {x: -0.556, y: -4.138, z: -7.574}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1157589699}
-  m_LocalEulerAnglesHint: {x: -21.849, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -77.541, y: 180, z: 0}
 --- !u!114 &5663893675989803352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19508,7 +19508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6610813927269572280
 Transform:
   m_ObjectHideFlags: 0
@@ -19913,6 +19913,7 @@ GameObject:
   - component: {fileID: 4909847029044220986}
   - component: {fileID: 7189909488036536562}
   - component: {fileID: 7189909488036536563}
+  - component: {fileID: 7189909488036536564}
   m_Layer: 0
   m_Name: Desert
   m_TagString: Untagged
@@ -20218,6 +20219,33 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!54 &7189909488036536564
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6855529406088066543}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!33 &7227820586328935498
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21373,8 +21401,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0059999996, y: 0.0069999998, z: 0.00006730702}
-  m_Center: {x: 1.1641532e-10, y: 0.0000000018626451, z: 0.00003364792}
+  m_Size: {x: 0.0059999996, y: 0.0069999998, z: 0.00018782816}
+  m_Center: {x: 0, y: 0.0000000017878359, z: 0.000021628817}
 --- !u!1 &8748500131768276479
 GameObject:
   m_ObjectHideFlags: 0
